@@ -1,8 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import TreeZoom from '../components/TreeZoom.tsx';
+import Forest2 from '../components/Forest2.tsx';
+import Forest from '../components/Forest.tsx';
+import Ground from '../components/Ground.tsx';
 ---
 
 <Layout>
-	<TreeZoom client:load />
+	<TreeZoom client:load>
+		<Forest2 />
+		<Forest />
+		<Ground />
+	</TreeZoom>
 </Layout>
