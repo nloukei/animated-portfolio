@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import treeSvg from '../assets/tree.svg?raw';
 ---
 <!doctype html>
 <html lang="en">
@@ -11,8 +12,21 @@ import '../styles/global.css';
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
-	<body>
+	<body class="app-loading-active">
+		<div
+			id="app-loading"
+			class="app-loading"
+			role="status"
+			aria-live="polite"
+			aria-busy="true"
+		>
+			<div id="app-loading-tree" class="app-loading__tree" set:html={treeSvg} aria-hidden="true" />
+			<p class="app-loading__text">Loading…</p>
+		</div>
 		<slot />
+		<script>
+			import '../scripts/loadingScreen.ts';
+		</script>
 	</body>
 </html>
 

@@ -3,13 +3,23 @@ import Layout from '../layouts/Layout.astro';
 import TreeZoom from '../components/TreeZoom.tsx';
 import Forest2 from '../components/Forest2.tsx';
 import Forest from '../components/Forest.tsx';
+import Billboard from '../components/billboard.tsx';
 import Ground from '../components/Ground.tsx';
+import Sign from '../components/Sign.tsx';
+import BigSign from '../components/bigsign.tsx';
+import SideNav from '../components/SideNav.tsx';
+import HeroHeading from '../components/HeroHeading.tsx';
 ---
 
 <Layout>
+	<SideNav client:load />
 	<TreeZoom client:load>
+		<HeroHeading />
 		<Forest2 />
+		<Billboard />
 		<Forest />
+		<Sign />
 		<Ground />
+		<BigSign />
 	</TreeZoom>
 </Layout>
